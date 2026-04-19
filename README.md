@@ -5,54 +5,43 @@ A lightweight Linux container runtime in C with a long-running supervisor and a 
 Read [`project-guide.md`](project-guide.md) for the full project specification.
 
 ---
+Team details:
 
-## Getting Started
+|Name          |   SRN        |
+------------------------------
+|JAGRITI MOHAN | PES2UG24CS200|
+|JOEL WILLIAMS | PES2UG24CS205|
 
-### 1. Fork the Repository
 
-1. Go to [github.com/shivangjhalani/OS-Jackfruit](https://github.com/shivangjhalani/OS-Jackfruit)
-2. Click **Fork** (top-right)
-3. Clone your fork:
+# Multicontainer Runtime Project  
+### Build, Load, Run, and Cleanup Guide (Ubuntu 22.04 / 24.04)
 
+---
+
+## Overview
+This project implements a multicontainer runtime consisting of:
+- A **kernel module** for low-level container handling  
+- A **supervisor** (user-space controller)  
+- A **CLI tool** for managing containers  
+
+This guide provides **step-by-step instructions** to reproduce the setup from scratch.
+
+---
+
+##  1. System Requirements
+
+- Ubuntu 22.04 / 24.04
+- GCC, Make
+- Linux Kernel Headers
+- Root (sudo) access
+
+---
+
+##  2. Initial Setup
+
+### Update system
 ```bash
-git clone https://github.com/<your-username>/OS-Jackfruit.git
-cd OS-Jackfruit
-```
-
-### 2. Set Up Your VM
-
-You need an **Ubuntu 22.04 or 24.04** VM with **Secure Boot OFF**. WSL will not work.
-
-Install dependencies:
-
-```bash
-sudo apt update
-sudo apt install -y build-essential linux-headers-$(uname -r)
-```
-
-### 3. Run the Environment Check
-
-```bash
-cd boilerplate
-chmod +x environment-check.sh
-sudo ./environment-check.sh
-```
-
-Fix any issues reported before moving on.
-
-### 4. Prepare the Root Filesystem
-
-```bash
-mkdir rootfs-base
-wget https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86_64/alpine-minirootfs-3.20.3-x86_64.tar.gz
-tar -xzf alpine-minirootfs-3.20.3-x86_64.tar.gz -C rootfs-base
-
-# Make one writable copy per container you plan to run
-cp -a ./rootfs-base ./rootfs-alpha
-cp -a ./rootfs-base ./rootfs-beta
-```
-
-Do not commit `rootfs-base/` or `rootfs-*` directories to your repository.
+sudo apt update && sudo apt upgrade -y
 
 ### 5. Understand the Boilerplate
 
