@@ -6,11 +6,10 @@ Read [`project-guide.md`](project-guide.md) for the full project specification.
 
 ---
 Team details:
-
-|Name          |   SRN        |
-------------------------------
-|JAGRITI MOHAN | PES2UG24CS200|
-|JOEL WILLIAMS | PES2UG24CS205|
+| Name           |       SRN      | 
+|----------------|----------------|
+| Jagriti Mohan  | PES2UG24CS200  | 
+| Joel William   | PES2UG24CS205  | 
 
 
 # Multicontainer Runtime Project  
