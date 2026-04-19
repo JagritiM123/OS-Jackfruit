@@ -45,7 +45,7 @@ sudo apt update && sudo apt upgrade -y
 ### 5. Understand the Boilerplate
 
 The `boilerplate/` folder contains starter files:
-
+```
 | File                   | Purpose                                             |
 | ---------------------- | --------------------------------------------------- |
 | `engine.c`             | User-space runtime and supervisor skeleton          |
@@ -56,7 +56,7 @@ The `boilerplate/` folder contains starter files:
 | `io_pulse.c`           | I/O-bound test workload                             |
 | `memory_hog.c`         | Memory-consuming test workload                      |
 | `environment-check.sh` | VM environment preflight check                      |
-
+```
 Use these as your starting point. You are free to restructure the repository however you want — the submission requirements are listed in the project guide.
 
 ### 6. Build and Verify
@@ -64,7 +64,6 @@ Use these as your starting point. You are free to restructure the repository how
 ```bash
 cd boilerplate
 make
-```
 
 If this compiles without errors, your environment is ready.
 
